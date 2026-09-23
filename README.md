@@ -59,19 +59,18 @@ Ensure Google Cloud authentication is configured:
 gcloud auth application-default login
 ```
 
-### 2. Run the ADK Local Web Dev Server
-Start the agent dev server with agent reloading enabled:
-```bash
-uv run adk web --port 8080 --allow_origins "*" --reload_agents
-```
-
-### 3. Run the LinkedIn Chat Frontend
-From the `frontend/` directory:
+### 2. Run the LinkedIn Chat Application
+Start the frontend server (runs on port 8000 and connects via A2A to the deployed agent):
 ```bash
 cd frontend
 python main.py
 ```
 Open your browser at `http://localhost:8000` to interact with the assistant.
+
+*(Optional)* If you want to run the raw ADK Agent Developer Web UI instead:
+```bash
+uv run adk web --port 8080 --allow_origins "*" --reload_agents
+```
 
 ---
 
