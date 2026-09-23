@@ -16,6 +16,7 @@
 4. **Adaptive Outreach Drafting**: Generates hyper-focused 45–80 word cold outreach messages with warm greetings, tailored hooks acknowledging the post, direct active search intent, and a polite, low-pressure ask. Strictly selects only 2–3 matching skills per message.
 5. **Quality Flywheel & Scoring**: Evaluates each draft across 4 key dimensions (Greeting & Hook, Skill Alignment, Active Search Intent, Mobile Brevity) and assigns an objective readiness score (0–100).
 6. **Rich Visual UI (A2UI)**: Returns structured visual cards (surfaces with Cards, Columns, Rows, Dividers, and Text) directly to the chat interface.
+7. **Interactive Example Prompts**: Features 1-click prompt suggestion pills directly above the chat input to instantly draft recruiter messages, check saved leads in storage, or browse proven cold outreach frameworks.
 
 ---
 
