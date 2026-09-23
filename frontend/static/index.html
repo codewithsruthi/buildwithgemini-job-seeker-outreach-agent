@@ -35,8 +35,13 @@
   input:focus { border-color:var(--accent); box-shadow:0 0 0 1px var(--accent); }
   button { padding:.65rem 1.4rem; border:none; border-radius:24px; background:var(--accent); color:#fff; font-weight:600; cursor:pointer; font-size:0.95rem; transition:background 0.2s; }
   button:hover { background:var(--accent-hover); }
-  #new-chat-btn { background:#fff; color:var(--accent); border:1.5px solid var(--accent); padding:0.35rem 0.9rem; border-radius:18px; font-size:0.85rem; cursor:pointer; font-weight:600; transition:all 0.2s; }
   #new-chat-btn:hover { background:#f0f7fd; }
+
+  /* --- Prompt suggestions row --- */
+  .prompt-suggestions { display:flex; gap:0.5rem; max-width:820px; width:100%; margin:0 auto; padding:0.5rem 1.5rem 0.6rem; overflow-x:auto; white-space:nowrap; }
+  .prompt-pill { background:#fff; border:1px solid #c0c8d0; color:#3b4045; border-radius:16px; padding:0.38rem 0.85rem; font-size:0.83rem; cursor:pointer; font-weight:500; transition:all 0.15s ease-in-out; display:inline-flex; align-items:center; gap:0.35rem; box-shadow:0 1px 2px rgba(0,0,0,0.05); }
+  .prompt-pill:hover { background:#ebf4fd; border-color:var(--accent); color:var(--accent); transform:translateY(-1px); }
+  .prompt-pill span.icon { font-size:0.95rem; }
 
   /* --- A2UI component styles (Card, Column, Row, Text, Divider, List, Image, Icon) --- */
   .a2card { border:1px solid var(--border); border-radius:10px; padding:1.25rem; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.08); max-width:100%; }
@@ -65,8 +70,13 @@
   <button id="new-chat-btn">+ New Session</button>
 </header>
 <div id="log"></div>
+<div class="prompt-suggestions">
+  <button type="button" class="prompt-pill" data-prompt="Draft a cold message for Kajal Jain at AWS using the saved posts"><span class="icon">✉️</span> Draft Outreach: Kajal Jain (AWS)</button>
+  <button type="button" class="prompt-pill" data-prompt="Show my saved job posts from storage and their status"><span class="icon">📂</span> Check Saved Leads in Storage</button>
+  <button type="button" class="prompt-pill" data-prompt="Show proven cold outreach frameworks and templates"><span class="icon">📋</span> Proven Outreach Frameworks</button>
+</div>
 <form id="form">
-  <input id="input" placeholder="Ask something…" autocomplete="off" autofocus>
+  <input id="input" placeholder="Paste a LinkedIn post URL or ask to draft a message…" autocomplete="off" autofocus>
   <button>Send</button>
 </form>
 
@@ -239,6 +249,17 @@ form.addEventListener("submit", async (ev) => {
   } catch (e) {
     b.textContent = "Error: " + e.message;
   }
+});
+
+// Clickable prompt suggestions
+document.querySelectorAll(".prompt-pill").forEach(pill => {
+  pill.addEventListener("click", () => {
+    const prompt = pill.getAttribute("data-prompt");
+    if (prompt) {
+      input.value = prompt;
+      form.dispatchEvent(new Event("submit", { cancelable: true }));
+    }
+  });
 });
 </script>
 </body>
