@@ -4,6 +4,8 @@
 
 ![Demo](demo.gif)
 
+🔗 **Live Application**: [https://linkedin-outreach-frontend-491267598554.us-central1.run.app](https://linkedin-outreach-frontend-491267598554.us-central1.run.app)
+
 ---
 
 ## 🎯 What the Agent Does
