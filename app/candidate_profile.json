@@ -1,0 +1,27 @@
+{
+  "current_role": "Data Engineer",
+  "current_company": "Meta",
+  "target_roles": [
+    "Data Engineer",
+    "Business Analyst",
+    "Data Analyst",
+    "Analytics Engineer"
+  ],
+  "skills_portfolio": [
+    "SQL",
+    "Python",
+    "Analysis",
+    "Experimentation",
+    "LLMs",
+    "Claude",
+    "Agents",
+    "Workflows"
+  ],
+  "message_preferences": {
+    "tone": "Warm, professional, authentic, low-pressure",
+    "greeting_rule": "Always start with a polite, natural greeting (e.g., 'Hi [Name], hope you're having a great week!')",
+    "selective_skills_rule": "Select only 2-3 most relevant skills matching the target post/role; do NOT dump all skills at once",
+    "active_search_rule": "Always explicitly mention active search intent (e.g. 'I am actively looking for new opportunities in...')",
+    "word_count_target": "50-80 words"
+  }
+}
